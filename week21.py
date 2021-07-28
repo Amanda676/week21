@@ -67,14 +67,26 @@ def add_data():
         '''
         
         data = request.form
-        #dict.update(sequence)
+        
+        filenm = "./static/nobel.json"
 
+        with open(filenm,'r+') as file:
+            # First we load existing data into a dict.
+            file_data = json.load(file)
+            # Join new_data with file_data inside emp_details
+            file_data["prizes"].append(data)
+            # Sets file's current position at offset.
+            file.seek(0)
+            # convert back to json.
+            json.dump(file_data, file, indent = 4)
+
+        '''
         json_url = os.path.join(app.static_folder,"","nobel.json")
         data_json = json.load(open(json_url))
         prizes_data = data_json['prizes']
         updated_data = prizes_data.append(data)
-
-        return updated_data
+        '''
+        return data
         #return redirect(url_for("save_data", data))
         
         '''(yr=year, cat = category, \
