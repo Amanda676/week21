@@ -17,7 +17,7 @@ def home_page():
     welcome_msg = '<p>Nobel Data</p> \
     <p>/all for all years</p> \
     <p>/all/year for one year</p> \
-    <p>/datainput for input data function</p>'
+    <p>/add_data for input data function</p>'
     return welcome_msg
 
 @app.route("/all")
@@ -54,7 +54,7 @@ def datainput():
 '''
 
 @app.route("/add_data", methods=["POST", "GET"])    
-def data_add():
+def add_data():
     if request.method == "POST":
         '''
         year = request.form['year']
