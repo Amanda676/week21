@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 
 #import necessary libraries
-# pip install flask 
+#pip install flask 
 #export FLASK_APP=flask-app
 #flask run
 from flask import Flask, json, render_template, request, jsonify, redirect, url_for
-import requests
+
 import os
 
 #create instance of Flask app
